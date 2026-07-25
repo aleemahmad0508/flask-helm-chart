@@ -1,0 +1,38 @@
+name: Release Helm Chart
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+
+      - name: Lint Chart
+        run: helm lint .
+
+      - name: Package Chart
+        run: |
+          mkdir -p deploy
+          helm package . -d deploy
+
+      - name: Generate Helm Repository Index
+        run: |
+          helm repo index deploy
+
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy

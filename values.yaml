@@ -1,0 +1,28 @@
+replicaCount: 3
+
+image:
+  repository: hashicorp/http-echo
+  tag: "1.0"
+  pullPolicy: IfNotPresent
+
+container:
+  port: 5678
+  args:
+    - "-text=Hello from Flask Platform Project"
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5678
+
+ingress:
+  enabled: true
+  className: nginx
+  host: flask.local
+
+persistence:
+  enabled: true
+  storage: 1Gi
+
+probe:
+  interval: 30s
