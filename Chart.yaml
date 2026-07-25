@@ -2,5 +2,5 @@ apiVersion: v2
 name: flask-chart
 description: Flask Demo Application
 type: application
-version: 0.1.3
-appVersion: "1.3"
+version: 0.1.4
+appVersion: "1.4"
