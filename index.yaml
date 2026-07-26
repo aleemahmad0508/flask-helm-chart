@@ -3,12 +3,12 @@ entries:
   flask-chart:
   - apiVersion: v2
     appVersion: "1.5"
-    created: "2026-07-25T16:21:56.640990192Z"
+    created: "2026-07-26T06:29:05.171854583Z"
     description: Flask Demo Application
-    digest: e82ff3cef1649b5a8ddd477ea168d6896481a5e98f53e4f7d90c7f155a095b07
+    digest: f961fc56567d87c0a85fddbc398dab62f9a19ba7d0a66ba09b8709418424b9af
     name: flask-chart
     type: application
     urls:
     - flask-chart-0.1.5.tgz
     version: 0.1.5
-generated: "2026-07-25T16:21:56.640585314Z"
+generated: "2026-07-26T06:29:05.171475895Z"
