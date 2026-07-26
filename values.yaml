@@ -1,7 +1,7 @@
 replicaCount: 3
 
 image:
-  repository: hashicorp/http-echo
+  repository: aleemahmad2/flask-demo:v1
   tag: "1.0"
   pullPolicy: IfNotPresent
 
