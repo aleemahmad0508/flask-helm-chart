@@ -6,9 +6,7 @@ image:
   pullPolicy: IfNotPresent
 
 container:
-  port: 5678
-  args:
-    - "-text=Hello from Flask Platform Project"
+  port: 5000
 
 service:
   type: ClusterIP
