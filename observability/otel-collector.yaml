@@ -33,7 +33,7 @@ spec:
       prometheus:
         endpoint: "0.0.0.0:8889"
 
-      logging:
+      debug:
         verbosity: detailed
 
     service:
@@ -46,7 +46,7 @@ spec:
             - batch
           exporters:
             - prometheus
-            - logging
+            - debug
 
         traces:
           receivers:
@@ -54,4 +54,4 @@ spec:
           processors:
             - batch
           exporters:
-            - logging
+            - debug
