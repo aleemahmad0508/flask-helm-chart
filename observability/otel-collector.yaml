@@ -43,6 +43,11 @@ spec:
       debug:
         verbosity: detailed
 
+      otlp/jaeger:
+        endpoint: jaeger.observability.svc.cluster.local:4317
+        tls:
+          insecure: true
+
 
     service:
 
@@ -65,3 +70,4 @@ spec:
             - batch
           exporters:
             - debug
+            - otlp/jaeger
