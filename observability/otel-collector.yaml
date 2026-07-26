@@ -7,6 +7,7 @@ metadata:
 
 spec:
   mode: deployment
+
   image: otel/opentelemetry-collector-contrib:0.156.0
 
   ports:
@@ -21,23 +22,30 @@ spec:
       targetPort: 4318
 
   config:
+
     receivers:
       otlp:
         protocols:
           grpc:
+            endpoint: 0.0.0.0:4317
           http:
+            endpoint: 0.0.0.0:4318
+
 
     processors:
       batch:
 
+
     exporters:
       prometheus:
-        endpoint: "0.0.0.0:8889"
+        endpoint: 0.0.0.0:8889
 
       debug:
         verbosity: detailed
 
+
     service:
+
       pipelines:
 
         metrics:
@@ -48,6 +56,7 @@ spec:
           exporters:
             - prometheus
             - debug
+
 
         traces:
           receivers:
