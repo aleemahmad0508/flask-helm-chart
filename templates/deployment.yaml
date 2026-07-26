@@ -24,12 +24,6 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
 
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-
-        args:
-{{- range .Values.container.args }}
-        - {{ . | quote }}
-{{- end }}
-
         ports:
         - containerPort: {{ .Values.container.port }}
 

@@ -11,7 +11,7 @@ container:
 service:
   type: ClusterIP
   port: 80
-  targetPort: 5678
+  targetPort: 5000
 
 ingress:
   enabled: true
