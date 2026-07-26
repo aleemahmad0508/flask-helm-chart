@@ -33,7 +33,7 @@ spec:
 
 
     processors:
-      batch:
+      batch: {}
 
 
     exporters:
