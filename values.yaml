@@ -2,7 +2,7 @@ replicaCount: 3
 
 image:
   repository: aleemahmad2/flask-demo
-  tag: "v1"
+  tag: "v2"
   pullPolicy: IfNotPresent
 
 container:
