@@ -1,5 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
+
 metadata:
   name: opentelemetry
   namespace: argocd
@@ -15,6 +16,39 @@ spec:
     helm:
       values: |
         mode: deployment
+
+        image:
+          repository: otel/opentelemetry-collector-k8s
+
+        config:
+          receivers:
+            otlp:
+              protocols:
+                grpc:
+                http:
+
+          processors:
+            batch:
+
+          exporters:
+            debug: {}
+
+          service:
+            pipelines:
+              traces:
+                receivers: [otlp]
+                processors: [batch]
+                exporters: [debug]
+
+              metrics:
+                receivers: [otlp]
+                processors: [batch]
+                exporters: [debug]
+
+              logs:
+                receivers: [otlp]
+                processors: [batch]
+                exporters: [debug]
 
   destination:
     server: https://kubernetes.default.svc
