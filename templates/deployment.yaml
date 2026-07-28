@@ -4,6 +4,7 @@ kind: Deployment
 metadata:
   name: flask
   namespace: flask
+  
 
 spec:
   replicas: {{ .Values.replicaCount }}
