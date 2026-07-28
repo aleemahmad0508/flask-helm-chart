@@ -1,1 +1,1 @@
-monitoring-config/alertmanager-secret.yaml
+templates/alertmanager-secret.yaml
